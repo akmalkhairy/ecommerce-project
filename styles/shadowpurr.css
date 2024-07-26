@@ -70,3 +70,88 @@
 .cart-text {
   margin: 5px 0px;
 }
+
+.product-flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.product-grid {
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.product-container {
+  margin: 20px 20px;
+  max-width: 300px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.product-image {
+  width: 300px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+}
+
+.product-name, .display-price, .count-rating {
+  color: black;
+}
+
+.product-name-container, .rating-container, .display-price, .product-quantity-container, .add-to-cart-button {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.product-name {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.star-rating {
+  width: 100px;
+}
+
+.count-rating {
+  margin-left: 5px;
+}
+
+.display-price {
+  font-weight: bold;
+}
+
+select {
+  background-color: black;
+  color: white;
+  width: 45px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-parent-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+}
