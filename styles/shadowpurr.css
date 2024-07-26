@@ -1,3 +1,11 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .header-container {
   height: 60px;
   display: flex;
@@ -72,6 +80,7 @@
 }
 
 .product-flex-container {
+  margin-top: 60px;
   display: flex;
   justify-content: center;
 }
