@@ -1,0 +1,30 @@
+.header-container {
+  background-color: red;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 250px;
+}
+
+.company-name {
+  font-family: Helvetica;
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+}
+
+.checkout-title, 
+.cart-quantity {
+  font-family: Helvetica;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.checkout-title {
+  color: black;
+}
+
+.cart-quantity {
+  color: rgb(0, 113, 133);
+}

@@ -13,6 +13,12 @@
   background-color: black;
 }
 
+.company-logo {
+  font-family: Helvetica;
+  font-size: 25px;
+  font-weight: 600;
+}
+
 .left-section {
   display: flex;
   align-items: center;
