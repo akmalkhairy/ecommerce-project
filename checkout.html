@@ -9,27 +9,224 @@
   <link rel="stylesheet" href="styles/checkout.css">
 </head>
 <body>
+  <div class="flex-layout">
+    <div class="checkout-container">
+     
+      <div class="header-fixed">
+        <div class="header-container">
   
-  <div class="header-container">
-
-    <div class="left-section">
-      <div class="company-logo">
-        <span class="company-name">
-          Shadow Purr
-        </span>
+          <div class="left-section">
+            <div class="company-logo">
+              <span class="company-name">
+                Shadow Purr
+              </span>
+            </div>
+          </div>
+    
+          <div class="middle-section">
+            <span class="checkout-title">
+              Checkout (<a class="cart-quantity" href="">0 items</a>)
+            </span>
+          </div>
+    
+          <div class="right-section">
+            <img src="images/icons/checkout-lock-icon.png">
+          </div>
+    
+        </div>
       </div>
+  
+      <div class="order-review-container">
+  
+        <div class="page-title-container">
+          <span class="page-title">
+            Review Your Order
+          </span>
+        </div>
+  
+        <div class="order-and-payment-container">
+          <div class="order-grid">
+            <div class="order-container">
+              <div class="order-info-container">
+                <div class="delivery-date-container">
+                  <span class="delivery-date">Delivery date: Wednesday, July 31</span>
+                </div>
+                <div class="product-details-container">
+                  <div class="product-image-container">
+                    <img src="images/product/cat-eye-goggles.png">
+                  </div>
+                  <div class="product-info-container">
+                    <div class="product-name">Cat-Eye Goggles</div>
+                    <div class="price">RM 99.00</div>
+                    <section class="quantity-selector">
+                      <div class="item-quantity">
+                        Quantity: 1
+                      </div>
+                      <div>Update</div>
+                      <div>Delete</div>
+                    </section>
+                  </div>
+                  <div class="delivery-option-container">
+                    <section>
+                      <span class="delivery-option-title">
+                        Choose a delivery option
+                      </span>
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option1">
+                        <div>
+                          <div>
+                            <label for="option1">Tuesday, August 6</label>
+                          </div>
+                          <div>
+                            <span>FREE Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option2">
+                        <div class="delivery-option-info">
+                          <div>
+                            <label for="option2">Wednesday, July 31</label>
+                          </div>
+                          <div>
+                            <span>RM 4.99 - Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option3">
+                        <div>
+                          <div>
+                            <label for="option3">Monday, July 29</label>
+                          </div>
+                          <div>
+                            <span>RM 9.99 - Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="order-container">
+              <div class="order-info-container">
+                <div class="delivery-date-container">
+                  <span class="delivery-date">Delivery date: Tuesday, August 6</span>
+                </div>
+                <div class="product-details-container">
+                  <div class="product-image-container">
+                    <img src="images/product/clawed-camo-vest.png">
+                  </div>
+                  <div class="product-info-container">
+                    <div class="product-name">Clawed Camo Vest</div>
+                    <div class="price">RM 80.00</div>
+                    <section class="quantity-selector">
+                      <div class="item-quantity">
+                        Quantity: 1
+                      </div>
+                      <div>Update</div>
+                      <div>Delete</div>
+                    </section>
+                  </div>
+                  <div class="delivery-option-container">
+                    <section>
+                      <span class="delivery-option-title">
+                        Choose a delivery option
+                      </span>
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option1">
+                        <div>
+                          <div>
+                            <label for="option1">Tuesday, August 6</label>
+                          </div>
+                          <div>
+                            <span>FREE Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option2">
+                        <div class="delivery-option-info">
+                          <div>
+                            <label for="option2">Wednesday, July 31</label>
+                          </div>
+                          <div>
+                            <span>RM 4.99 - Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="delivery-option-container">
+                        <input type="radio" value="option3">
+                        <div>
+                          <div>
+                            <label for="option3">Monday, July 29</label>
+                          </div>
+                          <div>
+                            <span>RM 9.99 - Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          
+          <div class="payment-info-container">
+            <div>
+              <section>
+                <span class="order-summary-title">
+                  Order Summary
+                </span>
+              </section>
+              <div class="cost-info-container">
+                <div>Item (2):</div>
+                <div>RM 100.00</div>
+              </div>
+              
+              <div class="cost-info-container">
+                <div>Shipping and handling:</div>
+                <div>RM 4.99</div>
+              </div>
+    
+              
+              <div class="cost-info-container">
+                <div>Total before tax:</div>
+                <div>RM 90.99</div>
+              </div>
+    
+              
+              <div class="cost-info-container">
+                <div>Estimated Tax (10%):</div>
+                <div>RM 9.90</div>
+              </div>
+    
+              
+              <div class="cost-info-container">
+                <span class="total-cost">Order Total:</span>
+                <span class="order-cost">RM 109.90</span>
+              </div>
+            </div>
+            
+            <div class="button-container">
+              <div>
+                <button class="place-order-button">Place Order</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
     </div>
-
-    <div class="middle-section">
-      <span class="checkout-title">
-        Checkout (<a class="cart-quantity" href="">0 items</a>)
-      </span>
-    </div>
-
-    <div class="right-section">
-      <img src="images/icons/checkout-lock-icon.png">
-    </div>
-
   </div>
 
 </body>

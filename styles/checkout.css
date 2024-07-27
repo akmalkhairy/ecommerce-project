@@ -1,10 +1,29 @@
+body {
+  color: black;
+}
+
+.flex-layout {
+  display: flex;
+  justify-content: center;
+}
+
+.checkout-container {
+  width: 1100px;
+}
+
 .header-container {
-  background-color: red;
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 250px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.middle-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
 }
 
 .company-name {
@@ -27,4 +46,130 @@
 
 .cart-quantity {
   color: rgb(0, 113, 133);
+}
+
+.order-review-container {
+  max-width: 1200px;
+}
+
+.product-image-container img {
+  width: 120px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.product-details-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-option-container section {
+  width: 300px;
+}
+
+.order-and-payment-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.page-title-container {
+  margin: 20px 0;
+}
+
+.order-container, .payment-info-container {
+  border: solid;
+  border-width: 1px;
+  border-color: rgb(197, 197, 197);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.order-container {
+  margin-bottom: 15px;
+}
+
+.order-container {
+  width: 700px;
+  height: 250px;
+} 
+
+.payment-info-container {
+  width: 345px;
+  height: 230px;
+  padding: 10px;
+
+}
+
+.product-info-container {
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.product-name, .price, .quantity-selector {
+  margin-bottom: 10px;
+}
+
+.quantity-selector {
+  display: flex;
+  justify-content: flex-start;
+  gap: 7px;
+}
+
+.delivery-date, .delivery-option-container label {
+  color: rgb(0, 118, 0);
+  font-weight: 700;
+}
+
+.delivery-date-container {
+  margin: 10px;
+}
+
+.delivery-date {
+  font-size: 20px;
+}
+
+.delivery-option-container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.product-name, .delivery-option-title, .order-summary-title {
+  font-weight: 700;
+}
+
+.price, .total-cost, .order-cost {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+}
+
+.quantity-selector {
+  display: flex;
+}
+
+.cost-info-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.place-order-button {
+  width: 300px;
+  height: 40px;
+  background-color: white;
+  border: solid;
+  border-color: rgb(197, 197, 197);
+  border-width: 1px;
+  border-radius: 3px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
