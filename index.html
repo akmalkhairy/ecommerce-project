@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
   <link rel="stylesheet" href="styles/shadowpurr.css">
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/shared/header.css">
@@ -13,9 +13,11 @@
     <div class="header-container">
 
       <div class="left-section">
-        <div class="company-logo">
-          Shadow Purr
-        </div>
+        <a  class="home-link" href="index.html">
+          <div class="company-logo">
+            Shadow Purr
+          </div>
+        </a>
       </div>
 
       <div class="middle-section">
@@ -26,19 +28,27 @@
       </div>
 
       <div class="right-section">
+
         <div class="return-order-container">
-          <div>Returns</div>
-          <div>&amp; Orders</div>
+          <a class="order-link" href="orders.html">
+            <div>Returns</div>
+            <div>&amp; Orders</div>
+          </a>
         </div>
 
-        <div class="cart-container">
-          <div class="cart-logo-and-quantity-container">
-            <img class="cart-icon" src="images/icons/cart-icon.png">
-            <div class="cart-quantity">0</div>
+        <a href="checkout.html" class="checkout-link">
+          <div class="cart-container">
+            <div class="cart-logo-and-quantity-container">
+              <img class="cart-icon" src="images/icons/cart-icon.png">
+              <div class="cart-quantity">0</div>
+            </div>
           </div>
-        </div>
-
-        <div class="cart-text">Cart</div>
+  
+          <div>
+            <div class="cart-text">Cart</div>
+          </div>
+        </a>
+        
       </div>
 
     </div>

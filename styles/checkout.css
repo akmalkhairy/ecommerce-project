@@ -7,6 +7,10 @@ body {
   justify-content: center;
 }
 
+.home-link {
+  text-decoration: none;
+}
+
 .checkout-container {
   width: 1100px;
 }
@@ -46,6 +50,7 @@ body {
 
 .cart-quantity {
   color: rgb(0, 113, 133);
+  text-decoration: none;
 }
 
 .order-review-container {

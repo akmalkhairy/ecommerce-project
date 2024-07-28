@@ -40,6 +40,16 @@
   width: 500px;
 }
 
+.home-link {
+  text-decoration: none;
+}
+
+.checkout-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .search-bar {
   width: 500px;
   height: 35px;
@@ -65,6 +75,10 @@
   align-items: center;
   width: 200px;
   margin: 0px 10px;
+}
+
+.order-link {
+  text-decoration: none;
 }
 
 .return-order-container {
