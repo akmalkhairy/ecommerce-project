@@ -81,9 +81,18 @@
   text-decoration: none;
 }
 
+.return {
+  font-size: 13px;
+}
+
+.and-orders {
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .return-order-container {
   height: 40px;
-  width: 65px;
+  width: 70px;
   margin: 0px 20px;
 }
 
@@ -98,11 +107,14 @@
 }
 
 .cart-quantity {
+  font-weight: 600;
   position: absolute;
   top: -3px;
   right: 17px;
 }
 
 .cart-text {
+  font-size: 14px;
+  font-weight: 600;
   margin: 5px 0px;
 }
