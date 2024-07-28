@@ -62,12 +62,13 @@
 }
 
 select {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   width: 45px;
   height: 30px;
   border: none;
   border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button-parent-container {
@@ -76,10 +77,22 @@ select {
 }
 
 .add-to-cart-button {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
   border-radius: 5px;
   height: 40px;
   width: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.add-to-cart-button:active {
+  background-color: #333;
+  color: white;
 }
