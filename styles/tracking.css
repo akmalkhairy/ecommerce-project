@@ -10,10 +10,11 @@ body {
 
 .tracking-container {
   width: 1000px;
+  padding: 20px;
 }
 
 .view-order-container {
-  margin-top: 25px;
+  margin-top: 12px;
 }
 
 .status-flex-container {

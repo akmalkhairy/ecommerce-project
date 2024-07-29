@@ -11,6 +11,20 @@
   justify-items: center;
 }
 
+/* Media query for smaller screens */
+@media (max-width: 940px) {
+  .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Media query for very small screens */
+@media (max-width: 666px) {
+  .product-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
 .product-container {
   margin: 20px 20px;
   max-width: 300px;
