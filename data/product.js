@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     id: '1',
     name: 'Feline Combat Glasses',
@@ -7,7 +7,7 @@ const products = [
       stars: 4.5,
       count: 87
     },
-    priceCents: 4900,
+    priceCents: 14990,
     keywords: [
       'glasses',
       'visors',
@@ -21,7 +21,7 @@ const products = [
       stars: 5,
       count: 127
     },
-    priceCents: 5900,
+    priceCents: 5990,
     keywords: [
       'scratching',
       'post'
@@ -34,7 +34,7 @@ const products = [
       stars: 3.5,
       count: 56
     },
-    priceCents: 8900,
+    priceCents: 8999,
     keywords: [
       'kevlar',
       'cap',
