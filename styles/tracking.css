@@ -1,0 +1,66 @@
+body {
+  color: black;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+.tracking-container {
+  width: 1000px;
+}
+
+.view-order-container {
+  margin-top: 25px;
+}
+
+.status-flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.status-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #ccc; /* Background color of the status bar */
+  border-radius: 30px;
+  overflow: hidden; /* Ensures the green rectangle stays inside the bar */
+  position: relative;
+}
+
+.status-bar .fill {
+  width: 50%; /* Adjust this to represent the status (e.g., 70% filled) */
+  height: 100%;
+  background-color: green;
+  border-radius: 30px; /* Rounded corners on the left */
+}
+
+.product-image {
+  width: 170px;
+  border-radius: 10px;
+}
+
+.status-message {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.product-image-container {
+  margin: 20px 0;
+}
+
+.delivery-date-container {
+  margin-top: 25px;
+}
+
+.delivery-date {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.product-name-and-quantity-container {
+  margin: 15px 0;
+}

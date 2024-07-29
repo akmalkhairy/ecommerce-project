@@ -171,10 +171,25 @@ body {
   border-color: rgb(197, 197, 197);
   border-width: 1px;
   border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.place-order-button:hover {
+  background-color: black;
+  color: white;
 }
 
 .button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.update-save-delete-hyperlink {
+  color: rgb(1, 124, 182);
+  cursor: pointer;
+}
+
+.update-save-delete-hyperlink:hover {
+  color: orange;
 }

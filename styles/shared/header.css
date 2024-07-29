@@ -1,4 +1,30 @@
-.company-logo, 
+.logo, .short-logo, .return-order-container, .cart-container, .cart-text, .replace-icon {
+  display: none;
+}
+
+/* Default state */
+.logo, .return-order-container, .cart-container, .cart-text {
+  display: inline;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 940px) {
+  .logo {
+      display: none;
+  }
+  .short-logo {
+      display: inline;
+  }
+  .return-order-container, .cart-container, .cart-text {
+    display: none;
+}
+  .replace-icon {
+      display: inline;
+  }
+}
+
+.logo, 
+.short-logo,
 .return-order-container div,
 .cart-quantity,
 .cart-text {
@@ -21,10 +47,12 @@
   background-color: black;
 }
 
-.company-logo {
+.logo, .short-logo {
+  color: white;
   font-family: Helvetica;
   font-size: 25px;
   font-weight: 600;
+  margin-right: 30px;
 }
 
 .left-section {
@@ -50,12 +78,36 @@
   text-decoration: none;
 }
 
-.search-bar {
+/* .search-bar {
   width: 500px;
   height: 35px;
   padding-left: 20px;
   border: none;
   border-radius: 5px 0px 0px 5px;
+} */
+
+.search-bar {
+  width: 100%; /* Initial width as a percentage */
+  max-width: 500px; /* Optional: Maximum width */
+  height: 35px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 5px 0px 0px 5px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .responsive-search {
+      width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Media query for even smaller screens */
+@media (max-width: 480px) {
+  .responsive-search {
+      width: 100%; /* Full width for very small screens */
+  }
 }
 
 .search-icon {
@@ -73,7 +125,9 @@
 .right-section {
   display: flex;
   align-items: center;
-  width: 200px;
+  justify-content: center;
+  min-width: 50px;
+  max-width: 200px;
   margin: 0px 10px;
 }
 

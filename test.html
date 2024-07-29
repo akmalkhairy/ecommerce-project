@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        .left-section, .middle-section, .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .middle-section {
+            flex: 1;
+            justify-content: center;
+        }
+        .middle-section input[type="search"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 5px;
+        }
+        .right-section img {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <span id="logo">Shadow Purr</span>
+        </div>
+        <div class="middle-section">
+            <input type="search" placeholder="Search...">
+        </div>
+        <div class="right-section">
+            <img src="logo1.png" alt="Logo 1" width="40" height="40">
+            <img src="logo2.png" alt="Logo 2" width="40" height="40">
+        </div>
+    </div>
+
+    <script>
+        function resizeLogo() {
+            const logo = document.getElementById('logo');
+            if (window.innerWidth <= 768) {
+                logo.textContent = 'SP';
+            } else {
+                logo.textContent = 'Shadow Purr';
+            }
+        }
+
+        // Initial check
+        resizeLogo();
+
+        // Add event listener
+        window.addEventListener('resize', resizeLogo);
+    </script>
+</body>
+</html>
