@@ -160,12 +160,21 @@
   height: 35px;
 }
 
-.cart-quantity {
-  font-weight: 600;
+.cart-quantity-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: -3px;
-  right: 17px;
+  right: 12px;
 }
+
+.cart-quantity {
+  font-weight: 600;
+}
+
 
 .cart-text {
   font-size: 14px;
