@@ -2,7 +2,7 @@ import { products } from "../data/product.js";
 
 function renderProductGrid() {
 
-  let productHTML = "";
+  let productsHTML = "";
 
   products.forEach((product) => {
     const productImage = product.image;
@@ -11,7 +11,7 @@ function renderProductGrid() {
     const productRatingCounts = product.rating.count;
     const productPriceCents = product.priceCents;
 
-    productHTML += `
+    productsHTML += `
       <div class="product-container">
         <div class="image-container">
           <img class="product-image" src=${productImage}>
@@ -55,7 +55,7 @@ function renderProductGrid() {
   });
 
   document.querySelector('.js-product-grid')
-    .innerHTML = productHTML;
+    .innerHTML = productsHTML;
 }
 
 renderProductGrid();
