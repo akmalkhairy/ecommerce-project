@@ -24,12 +24,15 @@ export function addToCart(productId) {
     }
   });
 
+  const selectedElement = document.querySelector(`.js-quantity-selector-${productId}`);
+  const selectedQuantity = Number(selectedElement.value);
+
   if (matchingItem) {
-    matchingItem.quantity += 1;
+    matchingItem.quantity += selectedQuantity;
   } else {
     cart.push({
       productId: productId,
-      quantity: 1,
+      quantity: selectedQuantity,
       deliveryOptionId: '1'
     });
   }
