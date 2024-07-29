@@ -1,4 +1,7 @@
 import { products } from "../data/product.js";
+import { addToCart, saveToStorage, calculateCartQuantity, cart } from "../data/cart.js";
+
+displayCartQuantity();
 
 function renderProductGrid() {
 
@@ -45,7 +48,7 @@ function renderProductGrid() {
           </div>
     
           <div class="button-parent-container">
-            <button class="add-to-cart-button">Add to Cart</button>
+            <button class="add-to-cart-button js-add-cart-button" data-product-id="${product.id}">Add to Cart</button>
           </div>
           
         </div>
@@ -59,3 +62,21 @@ function renderProductGrid() {
 }
 
 renderProductGrid();
+
+document.querySelectorAll('.js-add-cart-button')
+  .forEach((button) => {
+    button.addEventListener('click', () => {
+      const productId = button.dataset.productId;
+      addToCart(productId);
+      saveToStorage();
+      displayCartQuantity();
+    });
+  })
+
+  console.log(cart);
+  console.log(calculateCartQuantity());
+
+  function displayCartQuantity() {
+    document.querySelector('.js-cart-quantity')
+      .innerHTML = calculateCartQuantity();
+  }
