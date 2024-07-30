@@ -1,6 +1,8 @@
 import { calculateCartQuantity } from "../data/cart.js";
 import { cart } from "../data/cart.js";
 import { getProduct } from "../data/product.js";
+import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import { getDeliveryOption, deliveryOptions } from "../data/deliveryOptions.js";
 
 document.querySelector('.js-cart-quantity')
   .innerHTML = calculateCartQuantity();
@@ -18,12 +20,18 @@ function renderOrderSummary() {
     const productPriceCents = matchingItem.priceCents;
     const productQuantity = cartItem.quantity;
     const deliveryOptionId = cartItem.deliveryOptionId;
+    const deliveryOption = getDeliveryOption(deliveryOptionId);
+    const today = dayjs();
+    const deliveryDates = today.add(deliveryOption.deliveryDays, 'days');
+    const deliveryDatesString = deliveryDates.format('dddd, MMMM D');
 
     ordersHTML += `
       <div class="order-container">
         <div class="order-info-container">
           <div class="delivery-date-container">
-            <span class="delivery-date">Delivery date: Wednesday, July 31</span>
+            <span class="delivery-date">Delivery date: 
+              ${deliveryDatesString}
+            </span>
           </div>
           <div class="product-details-container">
             <div class="product-image-container">
@@ -53,41 +61,8 @@ function renderOrderSummary() {
                 <span class="delivery-option-title">
                   Choose a delivery option
                 </span>
-                <div class="delivery-option-container">
-                  <input type="radio" value="option1">
-                  <div>
-                    <div>
-                      <label for="option1">Tuesday, August 6</label>
-                    </div>
-                    <div>
-                      <span>FREE Shipping</span>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="delivery-option-container">
-                  <input type="radio" value="option2">
-                  <div class="delivery-option-info">
-                    <div>
-                      <label for="option2">Wednesday, July 31</label>
-                    </div>
-                    <div>
-                      <span>RM 4.99 - Shipping</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="delivery-option-container">
-                  <input type="radio" value="option3">
-                  <div>
-                    <div>
-                      <label for="option3">Monday, July 29</label>
-                    </div>
-                    <div>
-                      <span>RM 9.99 - Shipping</span>
-                    </div>
-                  </div>
-                </div>
+                ${renderDeliveryOptions()}
               </section>
             </div>
           </div>
@@ -95,7 +70,35 @@ function renderOrderSummary() {
         
       </div>
     `;
-  })
+  });
+
+  function renderDeliveryOptions() {
+    let html = '';
+
+    deliveryOptions.forEach((option) => {
+      
+      const today = dayjs();
+      const deliveryDates = today.add(option.deliveryDays, 'days');
+      const deliveryDatesString = deliveryDates.format('dddd, MMMM D')
+      const deliveryCostCents = option.priceCents === 0 ? 'FREE ' : `RM ${((option.priceCents)/100).toFixed(2)} - `;
+
+      html += `
+        <div class="delivery-option-container">
+          <input type="radio" value="option1">
+          <div>
+            <div>
+              <label for="option1">${deliveryDatesString}</label>
+            </div>
+            <div>
+              <span>${deliveryCostCents}Shipping</span>
+            </div>
+          </div>
+        </div>
+      `;
+    })
+
+    return html;
+  }
 
   document.querySelector('.js-order-grid')
     .innerHTML = ordersHTML;
