@@ -6,7 +6,7 @@ export const cart = JSON.parse(localStorage.getItem('cart')) || [
   }, {
     productId: '2',
     quantity: 2,
-    deliveryOptionId: '3'
+    deliveryOptionId: '1'
   }
 ];
 

@@ -7,6 +7,8 @@ import { getDeliveryOption, deliveryOptions } from "../data/deliveryOptions.js";
 document.querySelector('.js-cart-quantity')
   .innerHTML = calculateCartQuantity();
 
+renderOrderSummary();
+
 function renderOrderSummary() {
 
   let ordersHTML = '';
@@ -14,10 +16,10 @@ function renderOrderSummary() {
   cart.forEach((cartItem) => {
     
     const productId = cartItem.productId; 
-    const matchingItem = getProduct(productId);
-    const productImage = matchingItem.image;
-    const productName = matchingItem.name;
-    const productPriceCents = matchingItem.priceCents;
+    const matchingProduct = getProduct(productId);
+    const productImage = matchingProduct.image;
+    const productName = matchingProduct.name;
+    const productPriceCents = matchingProduct.priceCents;
     const productQuantity = cartItem.quantity;
     const deliveryOptionId = cartItem.deliveryOptionId;
     const deliveryOption = getDeliveryOption(deliveryOptionId);
@@ -62,7 +64,8 @@ function renderOrderSummary() {
                   Choose a delivery option
                 </span>
 
-                ${renderDeliveryOptions()}
+                ${renderDeliveryOptions(cartItem, matchingProduct)}
+
               </section>
             </div>
           </div>
@@ -72,7 +75,7 @@ function renderOrderSummary() {
     `;
   });
 
-  function renderDeliveryOptions() {
+  function renderDeliveryOptions(cartItem, matchingProduct) {
     let html = '';
 
     deliveryOptions.forEach((option) => {
@@ -81,16 +84,20 @@ function renderOrderSummary() {
       const deliveryDates = today.add(option.deliveryDays, 'days');
       const deliveryDatesString = deliveryDates.format('dddd, MMMM D')
       const deliveryCostCents = option.priceCents === 0 ? 'FREE ' : `RM ${((option.priceCents)/100).toFixed(2)} - `;
+      const isChecked = option.id === cartItem.deliveryOptionId;
 
       html += `
         <div class="delivery-option-container">
-          <input type="radio" value="option1">
+          <input type="radio" 
+          ${isChecked ? 'checked' : ''}
+          name="delivery-option-${matchingProduct.id}"
+          >
           <div>
             <div>
-              <label for="option1">${deliveryDatesString}</label>
+              <div>${deliveryDatesString}</div>
             </div>
             <div>
-              <span>${deliveryCostCents}Shipping</span>
+              <div>${deliveryCostCents}Shipping</div>
             </div>
           </div>
         </div>
@@ -104,4 +111,56 @@ function renderOrderSummary() {
     .innerHTML = ordersHTML;
 }
 
-renderOrderSummary();
+function renderPaymentSummary() {
+  const cartQuantity = calculateCartQuantity();
+  const itemPriceCents = calculateTotalPrice();
+
+  let paymentHTML = '';
+
+  paymentHTML += `
+    <div>
+      <section>
+        <span class="order-summary-title">
+          Order Summary
+        </span>
+      </section>
+      <div class="cost-info-container">
+        <div>Item (${cartQuantity}):</div>
+        <div>RM 100.00</div>
+      </div>
+      
+      <div class="cost-info-container">
+        <div>Shipping and handling:</div>
+        <div>RM 4.99</div>
+      </div>
+
+      
+      <div class="cost-info-container">
+        <div>Total before tax:</div>
+        <div>RM 90.99</div>
+      </div>
+
+      
+      <div class="cost-info-container">
+        <div>Estimated Tax (10%):</div>
+        <div>RM 9.90</div>
+      </div>
+
+      
+      <div class="cost-info-container">
+        <span class="total-cost">Order Total:</span>
+        <span class="order-cost">RM 109.90</span>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <div>
+        <a href="orders.html">
+          <button class="place-order-button">Place Order</button>
+        </a>
+      </div>
+    </div>
+  `;
+
+  return paymentHTML;
+}
