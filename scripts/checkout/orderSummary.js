@@ -3,6 +3,8 @@ import { getProduct } from "../../data/product.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { getDeliveryOption, deliveryOptions } from "../../data/deliveryOptions.js";
 import { calculateCartQuantity } from "../../data/cart.js";
+import { updateDeliveryOption } from "../../data/cart.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
 
@@ -82,8 +84,12 @@ export function renderOrderSummary() {
       const isChecked = option.id === cartItem.deliveryOptionId;
 
       html += `
-        <div class="delivery-option-container">
-          <input type="radio" 
+        <div class="delivery-option-container
+          js-option-container"
+          data-product-id="${matchingProduct.id}"
+          data-delivery-option-id="${option.id}"
+        >
+          <input type="radio"
           ${isChecked ? 'checked' : ''}
           name="delivery-option-${matchingProduct.id}"
           >
@@ -108,4 +114,14 @@ export function renderOrderSummary() {
   
   document.querySelector('.js-cart-quantity')
     .innerHTML = calculateCartQuantity();
+
+  document.querySelectorAll('.js-option-container')
+    .forEach((element) => {
+      element.addEventListener('click', () => {
+        const { productId, deliveryOptionId } = element.dataset;
+        updateDeliveryOption(productId, deliveryOptionId);
+        renderOrderSummary();
+        renderPaymentSummary();
+      });
+    });
 }

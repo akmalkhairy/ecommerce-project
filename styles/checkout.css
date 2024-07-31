@@ -146,6 +146,7 @@ body {
 .delivery-option-container {
   display: flex;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .product-name, .delivery-option-title, .order-summary-title {
