@@ -126,9 +126,13 @@ body {
   gap: 7px;
 }
 
-.delivery-date, .delivery-option-container label {
+.delivery-date, .delivery-date-option {
   color: rgb(0, 118, 0);
   font-weight: 700;
+}
+
+.spacer {
+  margin-left: 10px;
 }
 
 .delivery-date-container {

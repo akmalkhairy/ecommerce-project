@@ -92,9 +92,9 @@ function renderOrderSummary() {
           ${isChecked ? 'checked' : ''}
           name="delivery-option-${matchingProduct.id}"
           >
-          <div>
+          <div class="spacer">
             <div>
-              <div>${deliveryDatesString}</div>
+              <div class="delivery-date-option">${deliveryDatesString}</div>
             </div>
             <div>
               <div>${deliveryCostCents}Shipping</div>
