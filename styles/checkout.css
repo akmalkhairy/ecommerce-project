@@ -90,7 +90,7 @@ body {
 .order-container, .payment-info-container {
   border: solid;
   border-width: 1px;
-  border-color: rgb(197, 197, 197);
+  border-color: rgb(222, 222, 222);
   border-radius: 5px;
   padding: 10px;
 }

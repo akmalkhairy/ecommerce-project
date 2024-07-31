@@ -27,7 +27,7 @@ body {
   padding: 15px 35px;
   border: solid;
   border-width: 1px;
-  border-color: gray;
+  border-color: rgb(222, 222, 222);
   border-radius: 10px 10px 0 0;
 }
 
@@ -113,7 +113,7 @@ body {
 .container-of-container-2 {
   border: solid;
   border-width: 1px;
-  border-color: gray;
+  border-color: rgb(222, 222, 222);
   border-top: none;
   border-radius: 0 0 10px 10px;
 }
