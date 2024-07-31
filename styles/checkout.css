@@ -17,10 +17,16 @@ body {
 
 .header-container {
   height: 60px;
+  width: 1100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+}
+
+.header-fixed {
+  background-color: white;
+  z-index: 1000;
+  position: fixed;
 }
 
 .middle-section {
@@ -55,6 +61,7 @@ body {
 
 .order-review-container {
   max-width: 1200px;
+  margin-top: 95px;
 }
 
 .product-image-container img {
