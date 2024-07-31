@@ -1,9 +1,7 @@
-import { cart } from "../../data/cart.js";
+import { cart, calculateCartQuantity, updateDeliveryOption, removeCart } from "../../data/cart.js";
 import { getProduct } from "../../data/product.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { getDeliveryOption, deliveryOptions } from "../../data/deliveryOptions.js";
-import { calculateCartQuantity } from "../../data/cart.js";
-import { updateDeliveryOption } from "../../data/cart.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary() {
@@ -25,7 +23,7 @@ export function renderOrderSummary() {
     const deliveryDatesString = deliveryDates.format('dddd, MMMM D');
 
     ordersHTML += `
-      <div class="order-container">
+      <div class="order-container js-order-container-${matchingProduct.id}">
         <div class="order-info-container">
           <div class="delivery-date-container">
             <span class="delivery-date">Delivery date: 
@@ -49,7 +47,8 @@ export function renderOrderSummary() {
                   </span>
                 </div>
                 <div>
-                  <span class="update-save-delete-hyperlink">
+                  <span class="update-save-delete-hyperlink js-delete-link"
+                  data-product-id="${matchingProduct.id}">
                     Delete
                   </span>
                 </div>
@@ -121,6 +120,22 @@ export function renderOrderSummary() {
       element.addEventListener('click', () => {
         const { productId, deliveryOptionId } = element.dataset;
         updateDeliveryOption(productId, deliveryOptionId);
+        renderOrderSummary();
+        renderPaymentSummary();
+      });
+    });
+
+  document.querySelectorAll('.js-delete-link')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const { productId } = link.dataset;
+        removeCart(productId);
+
+        const container = document.querySelector(`
+          .js-order-container-${productId}`
+        );
+        container.remove();
+    
         renderOrderSummary();
         renderPaymentSummary();
       });
