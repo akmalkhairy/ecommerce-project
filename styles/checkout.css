@@ -73,6 +73,10 @@ body {
   width: 300px;
 }
 
+.input-selector {
+  cursor: pointer;
+}
+
 .order-and-payment-container {
   display: flex;
   justify-content: space-between;
