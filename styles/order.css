@@ -14,7 +14,8 @@ body {
 
 .order-section-container {
   margin-top: 65px;
-  width: 900px;
+  width: 500px;
+  padding: 0 20px;
 }
 
 .flex-container {
@@ -23,9 +24,7 @@ body {
 }
 
 .order-info-container-1 {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  padding: 15px 35px;
   border: solid;
   border-width: 1px;
   border-color: gray;
@@ -34,6 +33,7 @@ body {
 
 .order-info-left-section {
   display: flex;
+  justify-content: space-between;
 }
 
 .info-1, .image-container {
@@ -98,13 +98,12 @@ body {
 }
 
 .order-info-container-2 {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  padding: 15px 35px;
 }
 
 .left-section-1 {
   display: flex;
+  justify-content: space-between;
 }
 
 .order-info-right-section, .track-button-container {
