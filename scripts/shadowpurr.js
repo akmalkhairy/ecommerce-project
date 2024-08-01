@@ -1,6 +1,5 @@
 import { products } from "../data/product.js";
 import { cart } from "../data/cart-class.js";
-// import { addToCart, saveToStorage, calculateCartQuantity, cart } from "../data/cart.js";
 
 cart.displayCartQuantity();
 

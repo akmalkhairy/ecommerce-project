@@ -1,4 +1,3 @@
-// import { cart, calculateCartQuantity, updateDeliveryOption, removeCart, updateCartQuantity } from "../../data/cart.js";
 import { cart } from "../../data/cart-class.js";
 import { getProduct } from "../../data/product.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
