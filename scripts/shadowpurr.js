@@ -1,5 +1,6 @@
 import { products } from "../data/product.js";
-import { addToCart, saveToStorage, calculateCartQuantity, cart } from "../data/cart.js";
+// import { addToCart, saveToStorage, calculateCartQuantity, cart } from "../data/cart.js";
+import { cart } from "../data/cart-class.js";
 
 displayCartQuantity();
 
@@ -67,16 +68,13 @@ document.querySelectorAll('.js-add-cart-button')
   .forEach((button) => {
     button.addEventListener('click', () => {
       const productId = button.dataset.productId;
-      addToCart(productId);
-      saveToStorage();
+      cart.addToCart(productId);
+      cart.saveToStorage();
       displayCartQuantity();
     });
   })
 
-  console.log(cart);
-  console.log(calculateCartQuantity());
-
   function displayCartQuantity() {
     document.querySelector('.js-cart-quantity')
-      .innerHTML = calculateCartQuantity();
+      .innerHTML = cart.calculateCartQuantity();
   }
