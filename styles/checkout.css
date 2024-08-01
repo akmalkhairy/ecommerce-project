@@ -201,11 +201,40 @@ body {
   margin-top: 20px;
 }
 
-.update-save-delete-hyperlink {
+.update-quantity-link,
+.delete-link,
+.save-button {
   color: rgb(1, 124, 182);
   cursor: pointer;
 }
 
-.update-save-delete-hyperlink:hover {
+.update-quantity-link:hover,
+.delete-link:hover,
+.save-button:hover {
   color: orange;
+}
+
+.quantity-input {
+  width: 30px;
+  display: none;
+}
+
+.save-button {
+  display: none;
+}
+
+.is-editing-quantity .quantity-input {
+  display: initial;
+}
+
+.is-editing-quantity .save-button {
+  display: initial;
+}
+
+.is-editing-quantity .update-quantity-link {
+  display: none;
+}
+
+.is-editing-quantity .quantity-link {
+  display: none;
 }

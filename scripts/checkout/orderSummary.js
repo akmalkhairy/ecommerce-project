@@ -1,4 +1,4 @@
-import { cart, calculateCartQuantity, updateDeliveryOption, removeCart } from "../../data/cart.js";
+import { cart, calculateCartQuantity, updateDeliveryOption, removeCart, updateCartQuantity } from "../../data/cart.js";
 import { getProduct } from "../../data/product.js";
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { getDeliveryOption, deliveryOptions } from "../../data/deliveryOptions.js";
@@ -39,15 +39,27 @@ export function renderOrderSummary() {
               <div class="price">RM ${(productPriceCents/100).toFixed(2)}</div>
               <section class="quantity-selector">
                 <div class="item-quantity">
-                  Quantity: ${productQuantity}
+                  Quantity: <span class="quantity-link">${productQuantity}</span>
                 </div>
+                  <div class="quantity-input-container">
+                    <input type="number" class="quantity-input js-quantity-input-${productId}"
+                    data-product-id="${productId}"/>
+                  </div>
+                  <div>
+                    <span class="save-button js-save-button"
+                    data-product-id="${productId}">
+                      Save
+                    </span>
+                  </div>
                 <div>
-                  <span class="update-save-delete-hyperlink">
+                  <span class="update-quantity-link js-update-link"
+                  data-product-id="${productId}"
+                  >
                     Update
                   </span>
                 </div>
                 <div>
-                  <span class="update-save-delete-hyperlink js-delete-link"
+                  <span class="delete-link js-delete-link"
                   data-product-id="${matchingProduct.id}">
                     Delete
                   </span>
@@ -138,6 +150,41 @@ export function renderOrderSummary() {
     
         renderOrderSummary();
         renderPaymentSummary();
+      });
+    });
+
+  document.querySelectorAll('.js-update-link')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const { productId } = link.dataset;
+        const container = document.querySelector(`.js-order-container-${productId}`);
+
+        container.classList.add('is-editing-quantity');
+      });
+    });
+
+  document.querySelectorAll('.js-save-button')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const { productId } = link.dataset;
+        const container = document.querySelector(`.js-order-container-${productId}`);
+
+        const quantitySelector = document.querySelector(`.js-quantity-input-${productId}`);
+        const newQuantity = Number(quantitySelector.value);
+        console.log(typeof(newQuantity));
+
+        if(!newQuantity) {
+          alert('Enter a value');
+        } else if (newQuantity < 0 || newQuantity >= 100) {
+          alert('Product quantity must be in at least 0 and below 1000.')
+        } else {
+          updateCartQuantity(productId, newQuantity);
+
+          container.classList.remove('is-editing-quantity');
+  
+          renderOrderSummary();
+          renderPaymentSummary();
+        }
       });
     });
 }
