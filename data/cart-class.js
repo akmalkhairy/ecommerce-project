@@ -99,6 +99,11 @@ class Cart {
   
     this.saveToStorage();
   }
+
+  displayCartQuantity() {
+    document.querySelector('.js-cart-quantity')
+      .innerHTML = this.calculateCartQuantity();
+  }
 }
 
 export const cart = new Cart('cart-oop');
