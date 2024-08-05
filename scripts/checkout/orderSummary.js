@@ -4,6 +4,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { getDeliveryOption, deliveryOptions } from "../../data/deliveryOptions.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 import { renderEmptyCart } from "./emptyCart.js";
+import { renderEmptyPayment } from "./emptyCart.js";
 
 export function renderOrderSummary() {
 
@@ -151,11 +152,14 @@ export function renderOrderSummary() {
     
         if (cart.cartItems.length === 0) {
           renderEmptyCart();
-          renderPaymentSummary();
+          renderEmptyPayment();
         } else {
           renderOrderSummary();
           renderPaymentSummary();
         }
+
+        document.querySelector('.js-cart-quantity')
+          .innerHTML = cart.calculateCartQuantity();
       });
     });
 
