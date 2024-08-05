@@ -30,7 +30,7 @@ export function renderOrderList() {
             <div class="product-title">${productName}</div>
             <div>Arriving On: ${deliveryDateString}</div>
             <div>Quantity: ${quantity}</div>
-            <button class="buy-again-button">Buy it again</button>
+         
           </div>
         </div>
         
@@ -40,6 +40,18 @@ export function renderOrderList() {
 
   document.querySelector('.js-order-list')
     .innerHTML = orderHTML;
-  
-  cart.clearCartStorage();
+
+  // document.querySelectorAll('.js-buy-again-button')
+  //   .forEach((link) => {
+  //     link.addEventListener('click', () => {
+  //       const productId = link.dataset.productId;
+  //       console.log(productId);
+  //       cart.cartItems.push({
+  //         productId: productId,
+  //         quantity: 1,
+  //         deliveryOptionId: '1'
+  //       });
+  //       cart.displayCartQuantity();
+  //     });
+  //   });
 }
