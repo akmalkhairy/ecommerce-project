@@ -3,8 +3,30 @@ import { getProduct } from "../../data/product.js";
 import { getDeliveryOption } from "../../data/deliveryOptions.js";
 import { formatCurrency } from "../../utils/money.js";
 import { orders, saveToOrder } from "../../data/orderData.js";
+export function renderEmptyCart() {
+  let html = '';
 
-export function renderPaymentSummary() {
+  html = `
+    <div>
+      <div>
+        Your cart is empty.
+      </div>
+      <button class="view-products-button js-view-products-button">
+        View products
+      </button>
+    </div>
+  `;
+
+  document.querySelector('.js-order-grid')
+    .innerHTML = html;
+  
+  document.querySelector('.js-view-products-button')
+    .addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+}
+
+export function renderEmptyPayment() {
   let productPriceCents = 0;
   let shippingPriceCents = 0;
 
@@ -58,7 +80,7 @@ export function renderPaymentSummary() {
     
     <div class="button-container">
       <div>
-          <button class="place-order-button js-place-order-button">Place Order</button>
+          <button class="place-order-button js-place-order-button">View products</button>
       </div>
     </div>
   `;
@@ -83,6 +105,6 @@ export function renderPaymentSummary() {
         saveToOrder();
       });
       
-      window.location.href = 'orders.html';
+      window.location.href = 'index.html';
     });
 }

@@ -12,21 +12,25 @@ class Cart {
     
     if (!this.cartItems) {
       this.cartItems = [
-        {
-          productId: '1',
-          quantity: 1,
-          deliveryOptionId: '1'
-        }, {
-          productId: '2',
-          quantity: 2,
-          deliveryOptionId: '2'
-        }
+        // {
+        //   productId: '1',
+        //   quantity: 1,
+        //   deliveryOptionId: '1'
+        // }, {
+        //   productId: '2',
+        //   quantity: 2,
+        //   deliveryOptionId: '2'
+        // }
       ];
     }
   }
   
   saveToStorage() {
     localStorage.setItem(this.#localStorageKey, JSON.stringify(this.cartItems));
+  }
+
+  clearCartStorage() {
+    localStorage.clear(this.#localStorageKey);
   }
   
   addToCart(productId) {
