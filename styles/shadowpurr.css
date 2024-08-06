@@ -53,6 +53,26 @@
   margin-bottom: 8px;
 }
 
+.product-quantity-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.added-message-flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.is-added .checkmark {
+  display: initial;
+}
+
+.is-added .added-message {
+  display: initial;
+}
+
 .product-name {
   font-size: 17px;
   font-weight: 500;
@@ -115,4 +135,14 @@ select:hover {
 .add-to-cart-button:active {
   background-color: #333;
   color: white;
+}
+
+.checkmark {
+  width: 20px;
+  display: none;
+}
+
+.added-message {
+  color: green;
+  display: none;
 }

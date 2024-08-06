@@ -4,7 +4,6 @@ import { cart } from "../data/cart-class.js";
 cart.displayCartQuantity();
 
 function renderProductGrid() {
-
   let productsHTML = "";
 
   products.forEach((product) => {
@@ -45,6 +44,13 @@ function renderProductGrid() {
               <option value="9">9</option>
               <option value="10">10</option>
             </select>
+
+            <div class="added-message-container js-added-message-container-${product.id}">
+              <div class="added-message-flex">
+                <img class="checkmark" src="images/icons/checkmark.png">
+                <span class="added-message">Added</span>
+              </div>
+            </div>  
           </div>
     
           <div class="button-parent-container">
@@ -65,10 +71,20 @@ renderProductGrid();
 
 document.querySelectorAll('.js-add-cart-button')
   .forEach((button) => {
+    let timeOutId;
     button.addEventListener('click', () => {
+      clearTimeout(timeOutId);
       const productId = button.dataset.productId;
       cart.addToCart(productId);
       cart.saveToStorage();
       cart.displayCartQuantity();
+
+      const container = document.querySelector(`.js-added-message-container-${productId}`);
+
+      container.classList.add('is-added');
+
+      timeOutId = setTimeout(() => {
+        container.classList.remove('is-added');
+      }, 2000)
     });
   });
