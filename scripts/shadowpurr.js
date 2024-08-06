@@ -1,5 +1,6 @@
 import { products } from "../data/product.js";
 import { cart } from "../data/cart-class.js";
+import { displayCartMobile } from "./header.js";
 
 cart.displayCartQuantity();
 
@@ -85,6 +86,8 @@ document.querySelectorAll('.js-add-cart-button')
 
       timeOutId = setTimeout(() => {
         container.classList.remove('is-added');
-      }, 2000)
+      }, 2000);
+
+      displayCartMobile();
     });
   });

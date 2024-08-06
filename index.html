@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/shared/header.css">
 </head>
 <body>
-  <div class="header">
+  <div class="header js-header">
     <div class="header-container">
 
       <div class="left-section">
@@ -54,13 +54,26 @@
           </div>
         </a>
 
-        <div class="replace-icon">
+        <div class="replace-icon js-hamburger-menu">
           <img src="images/icons/hamburger-menu.png">
         </div>
         
       </div>
 
     </div>
+
+    <div class="cart-mobile-container">
+        <span class="cart-mobile js-cart-mobile">
+          Cart (0)
+        </span>
+    </div>
+
+    <div class="return-and-orders-mobile-container">
+        <span class="return-and-orders-mobile js-return-orders-mobile">
+          Return & Orders
+        </span>
+    </div>
+    
   </div>
 
   <div class="product-flex-container">
@@ -69,5 +82,6 @@
   </div>
 
   <script type="module" src="scripts/shadowpurr.js"></script>
+  <script type="module" src="scripts/header.js"></script>
 </body>
 </html>

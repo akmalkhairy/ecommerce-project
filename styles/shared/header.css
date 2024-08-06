@@ -20,6 +20,7 @@
 }
   .replace-icon {
       display: inline;
+      cursor: pointer;
   }
 }
 
@@ -175,9 +176,38 @@
   font-weight: 600;
 }
 
-
 .cart-text {
   font-size: 14px;
   font-weight: 600;
   margin: 5px 0px;
+}
+
+.cart-mobile-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.return-and-orders-mobile-container {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-mobile,
+.return-and-orders-mobile {
+  color: white;
+  padding: 10px 0;
+  display: none;
+  cursor: pointer;
+}
+
+.is-displaying .cart-mobile {
+  display: initial;
+}
+
+.is-displaying .return-and-orders-mobile {
+  display: initial;
 }
