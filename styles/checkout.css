@@ -23,6 +23,36 @@ body {
   justify-content: space-between;
 }
 
+@media (max-width: 1000px) {
+  .header-container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 720px) {
+  .header-container {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .company-logo {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .company-logo {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 720px) {
+  .right-section img {
+    display: none;
+  }
+}
+
 .header-fixed {
   background-color: white;
   z-index: 1000;
@@ -62,6 +92,11 @@ body {
 .order-review-container {
   max-width: 1200px;
   margin-top: 95px;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: center;
 }
 
 .product-image-container img {
@@ -108,15 +143,12 @@ body {
 
 .order-container {
   margin-bottom: 15px;
+  margin-right: 43px;
+  height: 250px;
 }
 
-.order-container {
-  width: 700px;
-  height: 250px;
-} 
-
 .payment-info-container {
-  width: 345px;
+  /* width: 345px; */
   height: 230px;
   padding: 10px;
 
@@ -256,4 +288,75 @@ body {
   background-color: black;
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.order-and-payment-container {
+  display: grid;
+  /* Here, 1fr means the first column will take
+     up the remaining space in the grid. */
+  grid-template-columns: 1fr 366px;
+  /* Use align-items: start; to prevent the elements
+     in the grid from stretching vertically. */
+  align-items: start;
+}
+
+@media (max-width: 1000px) {
+  .order-and-payment-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .product-details-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1000px) {
+  .payment-info-container {
+    grid-row: 1;
+    max-width: 700px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .order-container {
+    width: 700px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+    height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .payment-info-container {
+    grid-row: 1;
+    max-width: 400px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .page-title {
+    margin-left: 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-title {
+    margin-left: 28px;
+  }
+}
+
+@media (max-width: 720px) {
+  .order-container {
+    max-width: 400px;
+    margin-bottom: 12px;
+    margin-right: 0px;
+  }
 }
