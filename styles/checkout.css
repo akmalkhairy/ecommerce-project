@@ -94,11 +94,6 @@ body {
   margin-top: 95px;
 }
 
-.flex-box {
-  display: flex;
-  justify-content: center;
-}
-
 .product-image-container img {
   width: 120px;
   border-radius: 5px;
@@ -290,19 +285,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.order-and-payment-container {
-  display: grid;
-  /* Here, 1fr means the first column will take
-     up the remaining space in the grid. */
-  grid-template-columns: 1fr 366px;
-  /* Use align-items: start; to prevent the elements
-     in the grid from stretching vertically. */
-  align-items: start;
-}
-
 @media (max-width: 1000px) {
   .order-and-payment-container {
+    display: grid;
+    /* Here, 1fr means the first column will take
+      up the remaining space in the grid. */
+    grid-template-columns: 1fr 366px;
+    /* Use align-items: start; to prevent the elements
+      in the grid from stretching vertically. */
+    align-items: start;
     grid-template-columns: 1fr;
+    padding: 0px 30px;
   }
 }
 
